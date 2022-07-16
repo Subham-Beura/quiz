@@ -10,17 +10,19 @@ import { questionType } from './questionType';
 
 function App() {
   // State
-  const [question, setQuestion] = useState<questionType>()
+  const [questions, setQuestions] = useState<questionType[]>()
   // API call
   useEffect(() => {
-    fetchQuestions(setQuestion);
+    fetchQuestions(setQuestions);
   }, []);
+  if(questions)
   return (
     <div className="App">
       Quiz
-      <Card/>
+      <Card  question= {questions![1]}/>
     </div>
   );
+  else return(<div>Loading</div>)
 }
 
 export default App;

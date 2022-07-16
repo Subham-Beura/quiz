@@ -1,10 +1,13 @@
 import React from 'react'
-
-export default function Options() {
+type propsType={
+    allOptions:string[]
+}
+export default function Options(props:propsType) {
   return (
     <div>
-        1 2  3 4
-
+        {props.allOptions.map((option,index)=>{
+            return(<p  key={index}>{option}</p>)
+        })}
     </div>
   )
 }
