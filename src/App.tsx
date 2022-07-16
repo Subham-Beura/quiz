@@ -15,14 +15,14 @@ function App() {
   useEffect(() => {
     fetchQuestions(setQuestions);
   }, []);
-  if(questions)
-  return (
-    <div className="App">
-      Quiz
-      <Card  question= {questions![1]}/>
-    </div>
-  );
-  else return(<div>Loading</div>)
+  if (questions)
+    return (
+      <div className="App">
+        Quiz
+        <Card question={questions![1]} />
+      </div>
+    );
+  else return (<div>Loading</div>)
 }
 
 export default App;
