@@ -4,9 +4,9 @@ type propsType = {
 }
 export default function Options(props: propsType) {
     return (
-        <div>
+        <div className='option-container'>
             {props.allOptions.map((option, index) => {
-                return (<p key={index}>{option}</p>)
+                return (<p className='option' key={index}>{option}</p>)
             })}
         </div>
     )
