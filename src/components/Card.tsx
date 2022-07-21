@@ -3,6 +3,7 @@ import { questionType } from '../questionType'
 import Options from './Options'
 
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr"
+import shuffleArray from '../util'
 
 type propsType = {
   question: questionType
@@ -10,7 +11,7 @@ type propsType = {
 export default function Card({ question }: propsType) {
   console.log(question)
   const { question: question_text, correct_answer, incorrect_answers } = question
-  let allOptions = [...incorrect_answers, correct_answer]
+  let allOptions =shuffleArray( [...incorrect_answers, correct_answer])
   return (
     <div className='card'>
       <h3>Question 1/10</h3>
