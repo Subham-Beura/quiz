@@ -17,7 +17,7 @@ export default function Card({ question }: propsType) {
       <p>{question_text}</p>
       <Options allOptions={allOptions} />
       <div className="btn-container">
-        <GrCaretPrevious className='btn'/>
+        <GrCaretPrevious className='btn' />
         <GrCaretNext className='btn'/>
 
       </div>

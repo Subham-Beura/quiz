@@ -1,3 +1,10 @@
+:root{
+  --ascent:#ac80f3;
+  background: var(--ascent);
+}
+*{
+  border-radius: .75rem; 
+}
 .App {
   text-align: center;
   height: 60vh;
@@ -8,6 +15,7 @@
   align-items: center;
 }
 .card {
+  background: white;
   border: 1px solid #000;
   display: flex;
   width: 60vw;
@@ -27,7 +35,7 @@
 }
 .option:hover {
   color: white;
-  background: rgba(0, 0, 0, 0.61);
+  background: var(--ascent);
 }
 .btn-container {
 
@@ -44,4 +52,7 @@
   padding: .5rem 1vw;
   font-size: 1.6rem;
 
+}
+.btn:hover{
+  background: var(--ascent);
 }
