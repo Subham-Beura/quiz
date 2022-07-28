@@ -2,7 +2,7 @@ import React from 'react'
 type propsType = {
     allOptions: string[]
 }
-export default function Options(props: propsType) {
+export  function Options(props: propsType) {
     return (
         <div className='option-container'>
             {props.allOptions.map((option, index) => {

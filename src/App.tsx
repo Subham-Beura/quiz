@@ -11,6 +11,7 @@ import { questionType } from './questionType';
 function App() {
   // State
   const [questions, setQuestions] = useState<questionType[]>()
+  const [questionNo,setQuestionNo]=useState<number>(0)
   // API call
   useEffect(() => {
     fetchQuestions(setQuestions);
@@ -19,7 +20,7 @@ function App() {
     return (
       <div className="App">
         Quiz
-        <Card question={questions![1]} />
+        <Card question={questions![questionNo]} questionNo={questionNo} setQuestionNo={setQuestionNo} />
       </div>
     );
   else return (<div>Loading</div>)

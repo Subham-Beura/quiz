@@ -1,27 +1,37 @@
 import React from 'react'
-import { questionType } from '../questionType'
-import Options from './Options'
 
-import { GrCaretNext, GrCaretPrevious } from "react-icons/gr"
-import shuffleArray from '../util'
+
+import { Options } from './Options'
+import { Buttons } from './Buttons';
+import { questionType } from '../questionType'
+
+import utils from '../util'
+
 
 type propsType = {
-  question: questionType
+  question: questionType,
+  questionNo: number,
+  setQuestionNo: Function
 }
-export default function Card({ question }: propsType) {
-  console.log(question)
+
+export default function Card({ question, questionNo, setQuestionNo }: propsType) {
+
   const { question: question_text, correct_answer, incorrect_answers } = question
-  let allOptions =shuffleArray( [...incorrect_answers, correct_answer])
+
+  let allOptions = utils.shuffleArray([...incorrect_answers, correct_answer])
+
   return (
     <div className='card'>
-      <h3>Question 1/10</h3>
-      <p>{question_text}</p>
-      <Options allOptions={allOptions} />
-      <div className="btn-container">
-        <GrCaretPrevious className='btn' />
-        <GrCaretNext className='btn'/>
 
-      </div>
+      <h3>
+        Question {questionNo + 1}/{utils.MAX_QUESTIONS}
+      </h3>
+
+      <p>{question_text}</p>
+
+      <Options allOptions={allOptions} />
+
+      <Buttons questionNo={questionNo} setQuestionNo={setQuestionNo} />
     </div>
   )
 }
